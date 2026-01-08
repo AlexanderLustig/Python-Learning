@@ -1,0 +1,4 @@
+def merge(lst1, lst2):
+    final_lst = lst1 + lst2
+    final_lst.sort()
+    return final_lst
