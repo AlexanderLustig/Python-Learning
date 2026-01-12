@@ -43,3 +43,6 @@ while user_choice != 5:
     elif user_choice == 5:
         print("Exiting the Daily Expense Tracker. Goodbye!")
         # The while condition handles the break, so we don't need a 'break' here
+
+    elif user_choice >=6 or user_choice < 1:
+        print("Invalid choice. Please try again.")
