@@ -1,0 +1,45 @@
+print("Welcome to the Daily Expense Tracker!")
+print("\nMenu:\n1. Add a new expense\n2. View all expenses\n3. Calculate total and average expense\n4. Clear all expenses\n5. Exit")
+user_choice = 0
+expenses_lst = []
+
+while user_choice != 5:
+    user_choice = int(input())
+    
+    if user_choice == 1:
+        expense = float(input())
+        expenses_lst.append(expense)
+        print("Expense added successfully!")
+        
+    # Use elif for efficiency
+    elif user_choice == 2:
+        if len(expenses_lst) == 0:
+            print("No expenses recorded yet.")
+        else:
+            counter = 1
+            print("Your expenses:")
+            for i in expenses_lst:
+                # Outputting exactly like expected output
+                print(f"{counter}. {i}")
+                counter += 1
+                
+    # Use elif for efficiency
+    elif user_choice == 3:
+        if len(expenses_lst) == 0:
+            print("No expenses recorded yet.")
+        else:
+            total = sum(expenses_lst)
+            avg_expense = total / len(expenses_lst)
+            # Use f-strings to control spacing perfectly
+            print(f"Total expense: {total}")
+            print(f"Average expense: {avg_expense}")
+
+    # Added the missing Option 4
+    elif user_choice == 4:
+        expenses_lst.clear()
+        print("All expenses cleared.")
+            
+    # Use elif for efficiency
+    elif user_choice == 5:
+        print("Exiting the Daily Expense Tracker. Goodbye!")
+        # The while condition handles the break, so we don't need a 'break' here
